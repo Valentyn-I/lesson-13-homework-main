@@ -1,0 +1,308 @@
+header {
+  .top-header {
+    background-color: $theme-dark-green-color;
+    font-family: "Poppins", sans-serif;
+    .contacts-language {
+      padding-top: 20px;
+      padding-bottom: 15px;
+      padding-left: 5px;
+      padding-right: 5px;
+      justify-content: space-between;
+    }
+    a {
+      text-decoration: none;
+      color: $typography-white-color;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .contacts {
+      gap: 30px;
+      a {
+        display: flex;
+        gap: 10px;
+
+        div {
+          display: none;
+          line-height: 25px;
+          height: 25px;
+        }
+      }
+    }
+
+    .language {
+      width: 80px;
+      position: relative;
+      background-image: url(img/icons/navbar/arrow-icon-white.svg);
+      background-repeat: no-repeat;
+      background-position: 100% 50%;
+      background-size: 9px;
+    }
+
+    .language a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      line-height: 25px;
+      padding-left: 5px;
+      font-family: "Nunito", sans-serif;
+    }
+  }
+
+  .main-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.15);
+
+    .nav-bar {
+      height: 40px;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        height: 100%;
+
+        a {
+          display: block;
+          height: 100%;
+          img {
+            display: block;
+            height: 100%;
+          }
+        }
+      }
+
+      .nav-bar-options {
+        height: 100%;
+        justify-content: right;
+        gap: 40px;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        .call-us {
+          height: 90%;
+          width: 40px;
+
+          button {
+            height: 100%;
+            width: 100%;
+            background: $theme-green-color;
+            border: none;
+            border-radius: 10px;
+            color: $typography-white-color;
+            font-family: "Nunito", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            gap: 10px;
+
+            img {
+              display: block;
+              height: 60%;
+            }
+            div {
+              display: none;
+            }
+          }
+
+          button:hover,
+          button:focus {
+            background: $bg-white-color;
+            border: 1px solid $theme-green-color;
+            color: $theme-green-color;
+
+            img {
+              content: url(img/icons/navbar/icon-phone-call-green.svg);
+            }
+          }
+        }
+
+        .nav {
+          .nav-btn {
+            height: 30px;
+            width: 30px;
+            border: none;
+            background: none;
+            background-image: url(img/icons/navbar/menu-nav-button.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          .nav-btn:focus {
+            background-image: url(img/icons/navbar/exit-icon-green.svg);
+
+            ~ .menu {
+              display: block;
+            }
+          }
+          .menu {
+            position: absolute;
+            width: 100%;
+            top: 130px;
+            left: 0px;
+            display: none;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: $theme-dark-green-color;
+            padding-right: 15px;
+            padding-left: 15px;
+            > li {
+              padding-top: 15px;
+              padding-bottom: 8px;
+              border-bottom: 1px solid
+                rgba($color: $bg-white-color, $alpha: 0.2);
+              position: relative;
+
+              > a::after {
+                content: url(img/icons/navbar/arrow-icon-white.svg);
+                margin-left: 10px;
+                position: absolute;
+                top: 14px;
+              }
+
+              > a:last-child::after {
+                content: none;
+              }
+            }
+            > li:hover {
+              > a::after {
+                content: url(img/icons/navbar/arrow-icon-white-up.svg);
+              }
+            }
+            li:hover {
+              > ul {
+                display: block;
+              }
+            }
+            a {
+              display: block;
+              height: 22px;
+              line-height: 22px;
+              text-decoration: none;
+              color: $typography-white-color;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* laptop-m (md)*/
+@media (min-width: 1024px) {
+  header {
+    .top-header {
+      .contacts {
+        a {
+          div {
+            display: block;
+          }
+        }
+      }
+      .language a {
+        font-family: "Poppins", sans-serif;
+      }
+    }
+    .main-header {
+      .nav-bar {
+        height: 55px;
+
+        .nav-bar-options {
+          gap: 40px;
+          flex-direction: row;
+
+          .call-us {
+            width: 170px;
+
+            button {
+              border-radius: 5px;
+
+              div {
+                display: block;
+              }
+            }
+          }
+
+          .nav {
+            .nav-btn {
+              display: none;
+            }
+            .menu {
+              position: static;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              gap: 40px;
+              padding: 0px;
+
+              font-weight: 700;
+              background: none;
+
+              > li {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                border-bottom: none;
+
+                > a::after {
+                  content: url(img/icons/navbar/arrow-icon-black.svg);
+                  margin-left: 5px;
+                  top: -1px;
+                }
+
+                ul {
+                  position: absolute;
+                }
+              }
+              > li:hover {
+                > a::after {
+                  content: url(img/icons/navbar/arrow-icon-green.svg);
+                }
+
+                > a:last-child::after {
+                  content: none;
+                }
+              }
+
+              li:hover {
+                > a {
+                  color: $theme-green-color;
+                }
+              }
+
+              a {
+                color: $typography-black-color;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// desktop
+@media (min-width: 1200px) {
+  header {
+    .main-header {
+      .nav-bar {
+        .nav-bar-options {
+          gap: 100px;
+
+          .nav {
+            .menu {
+              gap: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
