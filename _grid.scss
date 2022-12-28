@@ -25,5 +25,9 @@
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+    // max-width: calc(1200px + 30px);
+    margin: 0 auto;
+    // padding-left: -15px;
+    // padding-right: -15px;
   }
 }
